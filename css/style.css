@@ -1,0 +1,135 @@
+.center{
+	margin: 0 auto;
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+body {
+	width: 100%;
+	height: 100%;
+	/* 加载背景图 */
+	background-image: url(../img/grass.jpg);
+	/* 背景图垂直、水平均居中 */
+	background-position: center center;
+	/* 背景图不平铺 */
+	background-repeat: no-repeat;
+	/* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+	background-attachment: fixed;
+	/* 让背景图基于容器大小伸缩 */
+	background-size: cover;
+	/* 设置背景颜色，背景图加载过程中会显示背景色 */
+	background-color: #464646;
+	/*鼠标变为锤子出现了点问题*/
+	/*cursor:url(http://pic.90sjimg.com/design/00/23/31/57/58f4bd135b61b.png),auto;*/
+}
+.holeBox{
+	position:relative;
+	width:200px;
+	height:200px;
+}
+.imgHole{
+	position: absolute;
+	bottom:0px;
+	width: 100%;
+	height: 40%;
+}
+.imgMouse{
+	position: absolute;
+	bottom:10%;
+	width: 70%;
+	height: 70%;
+	left:15%;
+}
+.imgHitted{
+	position: absolute;
+	top:0%;
+	width: 100%;
+	height: 30%;
+}
+#holeContent{
+	display: flex;
+	flex-direction: row;
+	flex-wrap:wrap;
+}
+#modal{
+	position:absolute;
+	top:0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	z-index: 3;
+}
+#checkPoint{
+	width: 80VW;
+	height:80VH;
+	background: white;
+	border-radius: 10VW;
+}
+.topLine{
+	height: 100px;
+}
+#imgClock{
+	width: 100px;
+	height: 100px;
+	position:relative;
+	top:-30px;
+}
+.clockBox{
+	background: gold;
+}
+.scoreBox{
+	background: #BFEEFE;
+}
+.topBox{
+	width:25VW;
+	height:100px;
+	box-shadow: 10px 10px 5px #888888;
+	border-radius: 50%
+}
+.topPromp{
+	font-size: 50px;
+	line-height: 100px;
+}
+#heartContent>img{
+	margin-top:30px;
+	width: 40px;
+	height: 40px;
+}
+.heartBox{
+	width:25VW;
+	height:100px;
+	box-shadow: 10px 10px 5px #888888;
+	border-radius: 50%;
+	background: floralwhite;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.bottomBox{
+	position:absolute;
+	bottom: 0px;
+	width: 50px;
+	height: 50px;
+	background: rgba(100,100,100,0.5);
+	font-size: 15px;
+	line-height: 50px;
+	color:white;
+	text-align: center;
+}
+.bottomLeft{
+	left:0px;
+	border-top-right-radius: 100px 100px;
+}
+.bottomRight{
+	right:0px;
+	border-top-left-radius: 100px 100px;
+}
+.bottomBox:hover
+{ 
+	width: 100px;
+	height: 100px;
+	color: orange;
+	font-size: 25px;
+	line-height: 100px;
+}

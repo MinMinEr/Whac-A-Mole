@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>打地鼠</title>
+		<link rel="stylesheet" href="./css/style.css" type="text/css"/>
+		<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+		<script src="./libs/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="./libs/bootstrap.min.css" type="text/css"/>
+		<script src="./js/app.js"></script>
+	</head>
+	<body>
+		<audio id="musicHit">
+  		<source src="./music/hit.wav" type="audio/wav">
+ 		 	 您的浏览器不支持 audio 与元素。
+		</audio>
+		<div class="row topLine">
+    	<div class="col">
+    		<div class="topBox scoreBox rounded-circle">
+    			<img src="./img/star.png" id="imgClock"/>
+    			<span id="score" class="topPromp">0</span>
+    		</div>
+    	</div>
+    	<div class="col">
+    		<div class="topBox clockBox rounded-circle">
+    			<img src="./img/clock.png" id="imgClock"/>
+    			<span id="time" class="topPromp"></span>
+    		</div>
+    	</div>
+    	<div class="col">
+    		<div class="heartBox rounded-circle" id="heartContent">
+    		</div>
+    	</div>
+ 		</div>
+		<div class="center" id="holeContent">
+		</div>
+		<!--<div id="modal">
+			<div id="checkPoint" class="center">
+				
+			</div>
+		</div>-->
+		<div class="bottomLeft bottomBox">
+			地图
+		</div>
+		<div class="bottomRight bottomBox">
+			暂停
+		</div>
+	</body>
+</html>
