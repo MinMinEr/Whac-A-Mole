@@ -133,3 +133,16 @@ body {
 	font-size: 25px;
 	line-height: 100px;
 }
+.line{
+	margin-top:10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.mousePicLine>img{
+	width: 50px;
+	height: 50px;
+}
+#endPromptTop{
+	color: red;
+}

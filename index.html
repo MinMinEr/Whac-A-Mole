@@ -39,11 +39,73 @@
 				
 			</div>
 		</div>-->
-		<div class="bottomLeft bottomBox">
-			地图
+		<div class="bottomLeft bottomBox" data-toggle="modal" data-target="#myModalMap">
+			关卡
 		</div>
-		<div class="bottomRight bottomBox">
-			暂停
+		<div class="bottomRight bottomBox" onclick="pause()">
+			<span id="pausePrompt">
+				暂停
+			</span>
 		</div>
+<div class="modal fade" id="myModalMap" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">选择关卡</h4>
+            </div>
+            <div class="modal-body">
+            	<h6 class="modal-title" id="myModalLabel">选择关卡</h6>
+            	<div class="line">
+            		<button type="button" class="btn btn-primary disabled" onclick="selectMap(1)">1</button>
+            		<button type="button" class="btn btn-primary" onclick="selectMap(2)">2</button>
+            		<button type="button" class="btn btn-primary" onclick="selectMap(3)">3</button>
+            		<button type="button" class="btn btn-primary" onclick="selectMap(4)">4</button>
+            	</div>
+            	<div class="line">
+            		<button type="button" class="btn btn-primary" onclick="selectMap(5)">5</button>
+            		<button type="button" class="btn btn-primary" onclick="selectMap(6)">6</button>
+            		<button type="button" class="btn btn-primary" onclick="selectMap(7)">7</button>
+            		<button type="button" class="btn btn-primary" onclick="selectMap(8)">8</button>
+            	</div>
+           	  <h6 class="modal-title" id="myModalLabel">选择地鼠图片</h6>
+           	  <div class="mousePicLine line">
+           	  	<img src="./img/mouse/A.png" onclick="selectMousePic('A')" class="img-circle">
+           	  	<img src="./img/mouse/B.png" onclick="selectMousePic('B')" class="img-circle">
+           	  	<img src="./img/mouse/C.png" onclick="selectMousePic('C')" class="img-circle">
+           	  	<img src="./img/mouse/D.png" onclick="selectMousePic('D')" class="img-circle">
+           	  </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="begin()">确认</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<div class="modal fade" id="myModalEnd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                	本局结果:
+                	<span id="endPromptTop"></span>
+                </h4>
+            </div>
+            <div class="modal-body">
+            	<!--<h6 class="modal-title" id="myModalLabel" >选择关卡</h6>-->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal" onclick="toMap()">选择关卡</button>
+              <button type="button" class="btn btn-primary" onclick="">
+                <span id="endPrompt" onclick="againOrNext()"></span>
+              </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>		
+		
+		
+		
+		
 	</body>
 </html>
