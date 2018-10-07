@@ -161,8 +161,32 @@ function selectMap(num){
 	mapNum = num;
 }
 function selectMousePic(name){
+	let mousePicLine = document.getElementsByClassName("mousePicLine")[0].getElementsByTagName('img');
+//	console.log(mousePicLine);
+	for(let i = 0 ; i < mousePicLine.length ; i++ ){
+		mousePicLine[i].setAttribute('class','img-circle');;
+	}
+	let index;
+	switch(name)
+	{
+	case 'A':
+  	index = 0;
+ 	 	break;
+	case 'B':
+  	index = 1;
+ 	  break;
+ 	case 'C':
+  	index = 2;
+ 	  break;
+ 	case 'D':
+  	index = 3;
+ 	  break;
+	default:
+  	console.log("出错");
+	}
+	mousePicLine[index].classList.add("addBorder");
 	mousePic = "./img/mouse/"+name+".png";
-  console.log(mousePic);	
+//console.log(mousePic);	
 }
 function mapEnd(end){
 //	console.log("ending");
