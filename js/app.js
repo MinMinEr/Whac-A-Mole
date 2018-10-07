@@ -189,7 +189,6 @@ function selectMousePic(name){
 //console.log(mousePic);	
 }
 function mapEnd(end){
-//	console.log("ending");
 	for (let i = 0 ; i < holeArray.length ; i++) {
 		holeArray[i].clearClockForShow();
 	}
@@ -228,13 +227,11 @@ function begin(again = false,remainTimeTemp = 10,heartNumTemp = 3){
 	}else{
 		$('#myModalEnd').modal('hide');
 	}
-
 	createHole();
 }
 function createHole(){
 	for(let i = 0 ; i < holeNum ; i++){
 		holeArray[i] = new Hole(difficultStep);
-//		holeArray.push(temp);
 	}
 }
 function againOrNext(){
@@ -266,31 +263,10 @@ function pause(){
 		holeArray.splice(0,holeArray.length);
 		document.getElementById("holeContent").innerHTML = "";
 		clearInterval(countDownClock);
-
-		
-		
-		
 	}
 }
 window.onload = function(){
 	$('#myModalMap').modal('show');
 	var musicHit = document.getElementById("musicHit"); 
 	selectMap();
-//	let elementTime = document.getElementById("time");
-//	let remaindTime = 60;
-//	let countDownClock=self.setInterval ( function () {
-//		remaindTime--;
-//		elementTime.innerHTML = remaindTime;
-//	},1000);
-//	drawHeart(3);
-//	a = new Hole(1);
-//	b = new Hole(1);
-//	c = new Hole(1);
-//	d = new Hole(1);
-//	e = new Hole(1);
-//	f = new Hole(1);
-//	g = new Hole(1);
-//	h = new Hole(1);
-//	i = new Hole(1);
-//	j = new Hole(1);
 }

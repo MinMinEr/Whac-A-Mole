@@ -23,11 +23,6 @@ body {
 	/*鼠标变为锤子出现了点问题*/
 	/*cursor:url(http://pic.90sjimg.com/design/00/23/31/57/58f4bd135b61b.png),auto;*/
 }
-.holeBox{
-	position:relative;
-	width:200px;
-	height:200px;
-}
 .imgHole{
 	position: absolute;
 	bottom:0px;
@@ -46,11 +41,6 @@ body {
 	top:0%;
 	width: 100%;
 	height: 30%;
-}
-#holeContent{
-	display: flex;
-	flex-direction: row;
-	flex-wrap:wrap;
 }
 #modal{
 	position:absolute;
@@ -85,9 +75,13 @@ body {
 	width:25VW;
 	height:100px;
 	box-shadow: 10px 10px 5px #888888;
-	border-radius: 50%
+	border-radius: 50%;
+	position: relative;
 }
 .topPromp{
+	position: absolute;
+	top:30px;
+	left: 50px;
 	font-size: 50px;
 	line-height: 100px;
 }
@@ -149,3 +143,51 @@ body {
 .addBorder{
 	border: 5px solid red;
 }
+@media screen and (min-width: 960px) { 
+ 	.holeBox{
+		position:relative;
+		width:200px;
+		height:200px;
+		margin-right:110px;
+	}	
+	#holeContent{
+		display: flex;
+		flex-direction: row;
+		width:960px;
+		flex-wrap:wrap;
+		margin: 0 auto;
+		justify-content: space-between;
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+ 	.holeBox{
+		position:relative;
+		width:200px;
+		height:200px;
+		margin-right:50px;
+	}	
+	#holeContent{
+		display: flex;
+		flex-direction: row;
+		width:750px;
+		flex-wrap:wrap;
+		margin: 0 auto;
+		justify-content: space-between;
+	}
+}
+@media only screen and (max-width: 767px){ 
+ 	.holeBox{
+		position:relative;
+		width:30VW;
+		height:30VW;
+		margin-top:10VW;
+	}	
+	#holeContent{
+		display: flex;
+		flex-direction: row;
+		width:95VW;
+		flex-wrap:wrap;
+		margin: 0 auto;
+		justify-content: space-between;
+	}
+} 
