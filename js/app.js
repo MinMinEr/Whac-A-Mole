@@ -135,7 +135,7 @@ let countDownClock;
 let mapNum = 1 ;
 let remaindTime;
 let clickTime = 0;
-let keyMap = [103,104,105,100,101,102,97,98,99];
+const keyMap = [103,104,105,100,101,102,97,98,99];
 function drawHeart(heartNumber = 3){
 		let heartContent = document.getElementById("heartContent");
 		heartContent.innerHTML = "";
