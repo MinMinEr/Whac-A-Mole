@@ -245,9 +245,7 @@ function createHole(){
 function againOrNext(){
 	if(document.getElementById("endPromptTop").innerHTML === "失败"){
 		again(true);
-		console.log('失败btnclick');
 	}else if(document.getElementById("endPromptTop").innerHTML === "胜利"){
-		console.log('胜利btnclick');
 		next();
 	}	
 }
@@ -290,5 +288,5 @@ document.onkeydown=function(event){
 window.onload = function(){
 	$('#myModalMap').modal('show');
 	var musicHit = document.getElementById("musicHit"); 
-	selectMap();
+	selectMap(1);
 }
