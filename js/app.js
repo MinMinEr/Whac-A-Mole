@@ -45,6 +45,9 @@ class Hole{
 		mouse.onclick = function(){
 			_this.hitted();
 		}
+		holeBox.onclick = function(){
+			clickTime++;
+		}
 		hitted.src = "./img/hitted.png";
 		hole.classList.add("imgHole");
 		mouse.classList.add("imgMouse");
@@ -99,6 +102,7 @@ class Hole{
 	}
 	hitted(){
 		if(this.status==='show'){
+			score++;
       clearTimeout(this.timeOutClock);
 			musicHit.play();
 			document.getElementsByClassName("imgHitted")[this.index].style.display='block';
@@ -122,6 +126,8 @@ let holeArray = [];
 let countDownClock;
 let mapNum = 1 ;
 let remaindTime;
+let clickTime = 0;
+let keyMap = [103,104,105,100,101,102,97,98,99];
 function drawHeart(heartNumber = 3){
 		let heartContent = document.getElementById("heartContent");
 		heartContent.innerHTML = "";
@@ -195,6 +201,8 @@ function mapEnd(end){
 	holeArray.splice(0,holeArray.length);
 	document.getElementById("holeContent").innerHTML = "";
 	$('#myModalEnd').modal('show');
+	document.getElementById("scorePrompt").innerHTML = score;
+	document.getElementById("ratePrompt").innerHTML = score/clickTime;
 	if(end==='successful'){
 		document.getElementById("endPromptTop").innerHTML = "胜利";
 		document.getElementById("endPrompt").innerHTML = "下一关";
@@ -265,6 +273,20 @@ function pause(){
 		clearInterval(countDownClock);
 	}
 }
+document.onkeydown=function(event){
+  var e = event || window.event || arguments.callee.caller.arguments[0];
+//console.log(e.keyCode);
+	for(let i = 0 ; i < keyMap.length ; i++){
+		if(e && e.keyCode===keyMap[i]){
+//		  console.log(i);
+		  if(i<holeArray.length){
+		  	holeArray[i].hitted();
+		  	clickTime++;
+		  }
+		}
+	}
+	
+}; 
 window.onload = function(){
 	$('#myModalMap').modal('show');
 	var musicHit = document.getElementById("musicHit"); 
