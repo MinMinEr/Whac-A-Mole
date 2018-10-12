@@ -76,6 +76,11 @@ class Hole{
 	clearClockForShow(){
 		window.clearInterval(this.clock);
 	}
+	clearTimeOutClock(){
+		if(this.status = 'show'){
+			window.clearInterval(this.timeOutClock);
+		}
+	}
 	setClockForShow(){
 		let _this = this;
 		this.clock=self.setInterval(function(){
@@ -88,7 +93,10 @@ class Hole{
 	timeOut(){
 		if(this.status==='show'){
       clearTimeout(this.timeOutClock);
-			document.getElementsByClassName("imgMouse")[this.index].classList.add("toHide");
+			let temp = document.getElementsByClassName("imgMouse")[this.index];
+			if(temp){
+				temp.classList.add("toHide");
+			}
 			$(".toHide").fadeOut("slow");
 			document.getElementsByClassName("imgMouse")[this.index].classList.remove("toHide");
 			heartNum--;
@@ -197,6 +205,7 @@ function selectMousePic(name){
 function mapEnd(end){
 	for (let i = 0 ; i < holeArray.length ; i++) {
 		holeArray[i].clearClockForShow();
+		holeArray[i].clearTimeOutClock();
 	}
 	holeArray.splice(0,holeArray.length);
 	document.getElementById("holeContent").innerHTML = "";
@@ -273,17 +282,14 @@ function pause(){
 }
 document.onkeydown=function(event){
   var e = event || window.event || arguments.callee.caller.arguments[0];
-//console.log(e.keyCode);
 	for(let i = 0 ; i < keyMap.length ; i++){
 		if(e && e.keyCode===keyMap[i]){
-//		  console.log(i);
 		  if(i<holeArray.length){
 		  	holeArray[i].hitted();
 		  	clickTime++;
 		  }
 		}
 	}
-	
 }; 
 window.onload = function(){
 	$('#myModalMap').modal('show');
