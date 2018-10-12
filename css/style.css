@@ -191,3 +191,6 @@ body {
 		justify-content: space-between;
 	}
 } 
+html{ 
+  cursor:url(../img/hammer_big.ico),auto;
+}
